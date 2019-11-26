@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="author" content="John Doe">
+    
+    
+    
+    
+    
+    
+    <title>JSP知识点 | Hexo</title>
+    <link href="http://yoursite.com" rel="prefetch">
+
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+<link rel="stylesheet" href="/css/aos.css">
+<link rel="stylesheet" href="/css/style.css">
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/aos.js"></script>
+    <script src="/js/highslide/highslide-full.min.js"></script>
+    <link rel="stylesheet" href="/js/highslide/highslide.css">
+    <style type="text/css">
+        @media (max-width: 768px) {
+            body {
+                background-color: #f0f0f0;
+                background: url('/imgs/xsbg.gif');
+                background-attachment: fixed;
+            }
+        }
+    </style>
+    
+    <!--<script type="text/javascript">
+      if (document.images) {
+        var avatar = new Image();
+        avatar.src = '/imgs/avatar.jpg'
+        var previews = 'preview1.jpg,preview2.jpg,preview3.jpg,preview4.jpg'.split(',')
+        var previewsPreLoad = []
+        for(var i = 0; i < length; i++) {
+          previewsPreLoad.push(new Image())
+          previewsPreLoad[previewsPreLoad.length - 1].src = '/imgs/preview' + previews[i]
+        }
+      }
+    </script>-->
+</head></html>
+<body>
+    <!-- 背景轮播图功能 -->
+    <section class="hidden-xs">
+    <ul class="cb-slideshow">
+        <li><span>天若</span></li>
+        <li><span>有情</span></li>
+        <li><span>天亦老</span></li>
+        <li><span>我为</span></li>
+        <li><span>长者</span></li>
+        <li><span>续一秒</span></li>
+    </ul>
+</section>
+    <!-- 欧尼酱功能, 谁用谁知道 -->
+    
+    <header class="navbar navbar-inverse" id="gal-header">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed"
+                    data-toggle="collapse" data-target=".bs-navbar-collapse"
+                    aria-expanded="false">
+                <span class="fa fa-lg fa-reorder"></span>
+            </button>
+            <a href="http://yoursite.com">
+                
+                <style>
+                    #gal-header .navbar-brand {
+                        height: 54px;
+                        line-height: 24px;
+                        font-size: 28px;
+                        opacity: 1;
+                        background-color: rgba(0,0,0,0);
+                        text-shadow: 0 0 5px #fff,0 0 10px #fff,0 0 15px #fff,0 0 20px #228DFF,0 0 35px #228DFF,0 0 40px #228DFF,0 0 50px #228DFF,0 0 75px #228DFF;
+                    }
+                </style>
+                <!-- 这里使用文字(navbar_text or config.title) -->
+                <div class="navbar-brand">Hexo</div>
+                
+            </a>
+        </div>
+        <div class="collapse navbar-collapse bs-navbar-collapse">
+            <ul class="nav navbar-nav" id="menu-gal">
+                
+                
+                <li class="">
+                    <a href="/">
+                        <i class="fa fa-home"></i>首页
+                    </a>
+                </li>
+                
+                
+                
+                <li class="">
+                    <a href="/archives">
+                        <i class="fa fa-archive"></i>归档
+                    </a>
+                </li>
+                
+                
+                
+                
+                <li class="">
+                    <a href="/categories">
+                        <i class="fa fa-list"></i>分类
+                    </a>
+                </li>
+                
+                
+                
+                
+                
+                <li class="">
+                    <a href="/tags">
+                        <i class="fa fa-tags"></i>标签
+                    </a>
+                </li>
+                
+                
+                
+                
+                <li class="">
+                    <a href="/about">
+                        <i class="fa fa-user"></i>关于我
+                    </a>
+                </li>
+                
+                
+            </ul>
+        </div>
+    </div>
+</header>
+    <div id="gal-body">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 gal-right" id="mainstay">
+                    
+<article class="article well article-body" id="article">
+    <div class="breadcrumb">
+        <i class="fa fa-home"></i>
+        <a href="http://yoursite.com">Hexo</a>
+        >
+        <span>JSP知识点</span>
+    </div>
+    <!-- 大型设备详细文章 -->
+    <div class="hidden-xs">
+        <div class="title-article">
+            <h1>
+                <a href="/2019/11/21/JSP知识点/">JSP知识点</a>
+            </h1>
+        </div>
+        <div class="tag-article">
+            
+            <span class="label label-gal">
+                <i class="fa fa-calendar"></i> 2019-11-21
+            </span>
+            
+        </div>
+    </div>
+    <!-- 小型设备详细文章 -->
+    <div class="visible-xs">
+        <center>
+            <div class="title-article">
+                <h4>
+                    <a href="/2019/11/21/JSP知识点/">JSP知识点</a>
+                </h4>
+            </div>
+            <p>
+                <i class="fa fa-calendar"></i> 2019-11-21
+            </p>
+            <p>
+                
+                
+            </p>
+        </center>
+    </div>
+    <div class="content-article">
+        <p>一、jsp的概念</p>
+<p>jsp(Java Server Pages)是一种动态网页开发技术<br>jsp本质上是java的servlet，所以运行需要servlet容器</p>
+<p>二、jsp的运行(以tomcat为例)<br>1、jsp怎么产生的?<br>在tomcat中lib目录下的jasper.jar负责解释jsp文件-&gt;.java文件-&gt;.class文件(继承了HttpJspBase(HttpServlet的子类))<br>2、编译后的文件放在哪<br>解释和编译好的文件(java和class)会放在tomcat的work\Catalina\localhost\项目名\org\apache\jsp目录下<br>三、jsp的生命周期</p>
+<p>编译阶段：解释和编译jsp文件(所以第一次访问jsp文件会慢一点)<br>初始化阶段：调用编译后类的jspInit()方法<br>执行阶段：调用_jspService(request,response)方法<br>销毁阶段：调用destroy()方法</p>
+<p>四、Jsp代码的格式<br>原本的HTML/CSS/JS代码的格式不变，引入了一些java脚本代码<br>1、jsp脚本元素</p>
+<p>&lt;%=%&gt;jsp表达式：里面可以写java代码，会被解释为out.print(jsp表达式的内容)<br>&lt;%%&gt;jsp脚本：里面写任何java代码，只要jasper能够认识,(tomcat8.5不能识别lambda表达式)，会被解释在类的_jspService方法内<br>&lt;%!%&gt;jsp声明：里面写java中的声明，比如定义成员变量和方法，会被解释在类中</p>
+<p>在jsp脚本中可以嵌入任何java代码，只要jasper能够认识,(tomcat8.5不能识别lambda表达式)<br>2、jsp指令&lt;%@指令名字 属性=”值” .. %&gt;</p>
+<p>page指令：</p>
+<p>language属性，目前只能是java<br>import属性，引入相关的包<br>pageEncoding属性，设置页面编码<br>contentType属性，设置页面传输过程的编码方式<br>session属性，是否支持session对象的使用，默认是支持的<br>isThreadSafe属性，设置jsp页面是否是线程安全的<br>errorPage属性，设置页面生错误时跳转的页面<br>isErrorPage属性，设置这个jsp是一个显示错误信息的页面，只要这个属性被设置为true，就可以使用jsp的隐藏内置对象exception</p>
+<p>include指令：</p>
+<p>&lt;%@include file=”” %&gt;:静态包含另一个页面<br>静态包含：把被包含的页面中的内容原封不动的拿到页面中</p>
+<p>taglib指令</p>
+<p>在当前jsp页面中引入一些特殊的标签库.比如jstl标签库、struts2标签库、spring标签库等等.</p>
+<p>3、jsp动作</p>
+<p><a href="jsp:useBean" target="_blank" rel="noopener">jsp:useBean</a>获取一个javaBean对象<br>&lt;jsp:useBean id=”s” class=”com.koutain.bean.Student” scope=”page”&gt;<br>相当于<br>   &lt;%<br>    Student s = null;<br>    s = (Student)pageContext.getAttribute(“s”);<br>    if(s==null){<br>        s = new Student();<br>        pageContext.setAttribute(“s”,s);<br>    }</p>
+<p>   %&gt;<br>123456789</p>
+<p><a href="jsp:setProperty" target="_blank" rel="noopener">jsp:setProperty</a>为javaBean对象中的属性赋值<br>&lt;jsp:setProperty property=”name” value=”tom” name=”s”/&gt;<br>相当于<br>    &lt;%<br>        Student s = (Student)pageContext.getAttribute(“s”);<br>        s.setName(“tom”);<br>    %&gt;<br>1234</p>
+<p><a href="jsp:getProperty" target="_blank" rel="noopener">jsp:getProperty</a>获取JavaBean对象中的属性值<br>&lt;jsp:getProperty property=”name” name=”s”/&gt;<br>相当于<br>   &lt;%<br>    Student s = (Student)pageContext.getAttribute(“s”);<br>    out.write(s.getName());<br>   %&gt;<br>1234</p>
+<p><a href="jsp:forward" target="_blank" rel="noopener">jsp:forward</a>jsp页面跳转<br>//跳转的同时还可以传参数<br>&lt;jsp:forward page=”target.jsp?name=tom”&gt;<br>或者<br>&lt;jsp:forward page=”target.jsp”&gt;<br>//这个动作元素专门是传参数使用的<br>&lt;jsp:param value=”tom” name=”name”/&gt;<br><br>1234567</p>
+<p>&lt;jsp:include动态包含<br>&lt;jsp:include page=”foot.jsp”&gt;<br>    &lt;jsp:param value=”lisi” name=”name”/&gt;<br><br>123</p>
+<p>动态包含和静态包含的区别？</p>
+<p>动态包含是将要包含的页面翻译为一个方法的调用，访问这个页面的时候才会调用；静态包含是一开始就将目标页面翻译在同一类中<br>动态包含可以给目标页面传参数；静态包含不可以</p>
+<p><a href="jsp:element" target="_blank" rel="noopener">jsp:element</a>向浏览器输出一个标签<br>&lt;jsp:element name=”font”&gt;<br>    &lt;jsp:attribute name=”color”&gt;blue<br>    <a href="jsp:body" target="_blank" rel="noopener">jsp:body</a>hello world<br><br>1234<br>相当于<font color="blue">hello world</font></p>
+<p>五、jsp中的注释<br>1、//或/**/注释</p>
+<p>因为jsp中可以嵌入jsp脚本所以在jsp脚本中可以使用java的注释</p>
+<p>2、<!----></p>
+<p>因为jsp页面最终是要输出文HTML代码，所以在非jsp脚本中可以使用HTML的注释</p>
+<p>3、&lt;%—-%&gt;</p>
+<p>在jsp页面中还可以使用一种jsp独有的注释，使用位置和HTML注释一样</p>
+<p>4、<!---->和&lt;%—-%&gt;的区别</p>
+<!---->会在最终输出的HTML源代码中显示，<%----%>不会，<%----%>只会在jsp页面的源码中显示
+
+<p>六、jsp中的九大内置对象<br>&lt;%=%&gt; jsp表达式<br>&lt;%!%&gt; jsp声明    在声明中无法使用jsp的9种内置对象<br>EL表达式<br>一、el表达式的使用<br>1、格式<br>${}<br>1<br>2、相关规则</p>
+<p>{}中可以是任意数据类型，会自动调用toString方法<br>{}中还可以是算术表达式<br>判断是否为空${empty “tom”}<br>使用三目运算符</p>
+<p>${empty stu.age?”stu.age”:”null”}<br>1<br>3、一些使用的情况<br>注意:当el表达式获取不到值时，什么都不做<br>二、el表达式”.”后面跟的不是是attribute而是property</p>
+<p>attribute是javabeen的属性<br>property是指JavaBean的Get方法</p>
+<p>三、取值的优先级<br>&lt;%<br>    //pageContext.setAttribute(“age”, 10,PageContext.PAGE_SCOPE);<br>    pageContext.setAttribute(“age”, 20,PageContext.REQUEST_SCOPE);<br>    pageContext.setAttribute(“age”, 30,PageContext.SESSION_SCOPE);<br>    pageContext.setAttribute(“age”, 40,PageContext.APPLICATION_SCOPE);<br>%&gt;<br>${age }<br>1234567<br>属性名相同，在多个域对象中，取值的顺序是：page-&gt;request-&gt;session-&gt;appliction<br>四、el表达式中”.”和[]的区别<br>在属性名或参数中有特殊符号时(例如”.”)，可以使用”[]”<br>JSTL标签库<br>使用jstl要额外引入jstl标签库的jar包(jstl.jar和standard.jar)<br>一、JSTL的使用<br>在jsp页面使用tablib指令添加：<br>&lt;%@ taglib prefix=”c” uri=”<a href="http://java.sun.com/jsp/jstl/core&quot;%&gt;" target="_blank" rel="noopener">http://java.sun.com/jsp/jstl/core&quot;%&gt;</a><br>1<br>其中prefix后面跟的是使用jstl标签的前缀；uri后面是要引用的jstl标签库<br>二、JSTL标签库的常用标签<br>1、&lt;c:forEach&gt;标签：遍历数组和集合<br>&lt;%<br>    List<student> list = new ArrayList<student>();</student></student></p>
+<pre><code>list.add(new Student(&quot;001&quot;, &quot;zs1&quot;, 13));
+list.add(new Student(&quot;002&quot;, &quot;zs2&quot;, 14));
+list.add(new Student(&quot;003&quot;, &quot;zs3&quot;, 18));
+list.add(new Student(&quot;004&quot;, &quot;zs4&quot;, 11));
+
+session.setAttribute(&quot;list&quot;, list);
+
+HashMap&lt;Long,Student&gt; map = new HashMap&lt;Long,Student&gt;();
+
+map.put(20L, new Student(&quot;002&quot;, &quot;zs2&quot;, 14) );
+map.put(30L, new Student(&quot;003&quot;, &quot;zs3&quot;, 18) );</code></pre><p>%&gt;</p>
+<p>&lt;c:forEach items=”${list }” var=”stu” begin=”0” end=”3” step=”1” varStatus=”status”&gt;<br>    ${status.index }-${stu.id}-${stu.name }-${stu.age}<br><br></p>
+<p>&lt;c:forEach items=”${map }” var=”entry”&gt;<br>    ${entry.key }-${entry.value.id }-${entry.value.name }-${entry.value.age }<br><br><br>1234567891011121314151617181920212223<br>2&lt;c:out&gt;标签:输出(相当于&lt;%=%&gt;)<br>&lt;c:out value=”hello”&gt;<br>&lt;c:out value=”${score}”&gt;<br>12<br>3、&lt;c:if&gt;标签：判断<br>&lt;%– 判断(eq判断字符串是否相等)–%&gt;<br>&lt;c:if test=”${name eq ‘tom’}”&gt;<br>    tom is exist<br><br>1234<br>4、&lt;c:choose&gt;标签:相当于if/else if<br>&lt;c:choose&gt;<br>    &lt;c:when test=”${score &gt;=90 }”&gt;优<br>    &lt;c:when test=”${score &gt;=80 }”&gt;良<br>    &lt;c:when test=”${score &gt;=70 }”&gt;中<br>    &lt;c:when test=”${score &gt;=60 }”&gt;及格<br>    &lt;c:otherwise&gt;差<br><br>1234567<br>5、&lt;c:set&gt;和&lt;c:remove&gt;标签:添加和删除元素<br>&lt;%– 添加元素 –%&gt;<br>    &lt;c:set var=”name” value=”tom” scope=”request”&gt;<br>    &lt;c:out value=”${name}”&gt;</p>
+<pre><code>&lt;%-- 删除元素 --%&gt;
+&lt;c:remove var=&quot;name&quot; scope=&quot;request&quot;/&gt; 
+&lt;c:out value=&quot;${name}&quot;&gt;&lt;/c:out&gt;</code></pre><p>1234567<br>6、&lt;c:catch&gt;标签：在jsp页面处理产生错误的异常状况，并且将错误信息储存起来。<br>&lt;c:catch var =”catchException”&gt;<br>   &lt;% int x = 1/0;%&gt;<br><br>&lt;c:if test = “${catchException != null}”&gt;<br>   </p><p>异常为 : ${catchException} <br><br>   发生了异常: ${catchException.message}</p><br><br>1234567<br>7、&lt;c:import&gt;标签：相当于jsp动作的动态包含<br>&lt;c:import url=””&gt;<br>8、&lt;c:redirect&gt;标签: 重定向到某个页面<br>&lt;c:redirect url=””&gt;<br>三、自定义标签<br>1、先导<p></p>
+<p>jsp2.0之前，自定义标签需要实现Tag接口，具体实现起来比较复杂</p>
+<p>jsp2.0之后，要简单的定义一个自己的标签，可以继承SimpleTagSupport类</p>
+<p>2、具体步骤</p>
+<p>编写一个类继承SimpleTagSupport类，重写doTag()方法<br>public class HelloTag extends SimpleTagSupport {<br>    //添加的属性<br>    private int count;</p>
+<pre><code>public int getCount() {
+    return count;
+}
+
+public void setCount(int count) {
+    this.count = count;
+}
+
+@Override
+public void doTag() throws JspException, IOException {
+
+    StringWriter sw = new StringWriter();
+
+    super.getJspBody().invoke(sw);
+
+    String tagBody = sw.toString();
+
+    //按照count属性遍历
+    for (int i = 0; i &lt; count; i++) {
+        // 输出添加的标签体
+        super.getJspContext().getOut().print(&quot;hello:&quot; + tagBody+&quot;&lt;br&gt;&quot;);
+    }
+
+}</code></pre><p>}<br>1234567891011121314151617181920212223242526272829</p>
+<p>创建.tld文件<br>在WEB-INF下创建一个后缀为.tld的文件(文件名随意)，里面的内容可以参照tomcat安装目录下webapps/examples\WEB-INF\jsp\example-taglib.tld<br><?xml version="1.0" encoding="utf-8" ?></p>
+<!DOCTYPE taglib
+        PUBLIC "-//Sun Microsystems, Inc.//DTD JSP Tag Library 1.2//EN"
+        "http://java.sun.com/j2ee/dtd/web-jsptaglibrary_1_2.dtd">
+<taglib>
+
+<p>  <tlib-version>1.0</tlib-version><br>  <jsp-version>1.2</jsp-version><br>  <short-name>simple</short-name><br>  <uri>koutian-hello</uri><br>  <tag><br>    <name>hello</name><br>    <tag-class>com.koutian.jstl.HelloTag</tag-class><br>    <body-content>scriptless</body-content><br>       <attribute><br>        <!-- 属性名 --><br>           <name>count</name><br>        <!-- 属性是否必须 --><br>           <required>true</required><br>        <!-- 属性值是否可以使用el表达式 --><br>           <rtexprvalue>true</rtexprvalue><br>       </attribute><br>  </tag><br></p></taglib><br>12345678910111213141516171819202122232425<p></p>
+<p>在jsp页面测试<br>&lt;%@ page pageEncoding=”UTF-8”%&gt;<br>&lt;%@ taglib prefix=”m” uri=”koutian-hello” %&gt;</p>
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+<meta charset="UTF-8">
+<title>test myTag</title>
+</head>
+<body>
+    <% request.setattribute("name", "tom"); request.setattribute("count", "10"); %>
+<m:hello count="${count }">${name }</m:hello>
+</%></body>
+</html></%----%></%----%>
+    </div>
+</article>
+
+
+                </div>
+                <aside class="col-md-4 gal-left" id="sidebar">
+    <!-- 此为sidebar的搜索框, 非搜索结果页面 -->
+<aside id="sidebar-search">
+    <div class="search hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <form class="form-inline clearfix" id="search-form" method="get"
+              action="/search/index.html">
+            <input type="text" name="s" class="form-control" id="searchInput" placeholder="搜索文章~" autocomplete="off">
+            <button class="btn btn-danger btn-gal" type="submit">
+                <i class="fa fa-search"></i>
+            </button>
+        </form>
+    </div>
+</aside>
+    <aside id="sidebar-author">
+    <div class="panel panel-gal" data-aos="flip-right" data-aos-duration="3000">
+        <div class="panel-heading" style="text-align: center">
+            <i class="fa fa-quote-left"></i>
+            John Doe
+            <i class="fa fa-quote-right"></i>
+        </div>
+        <div class="author-panel text-center">
+            <img src="/imgs/avatar.jpg" width="140" height="140"
+                 alt="个人头像" class="author-image">
+            <p class="author-description"></p>
+        </div>
+    </div>
+</aside>
+    
+    <aside id="sidebar-recent_comments">
+    <div class="panel panel-gal recent hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <div class="panel-heading">
+            <i class="fa fa-comments"></i>
+            最新评论
+            <i class="fa fa-times-circle panel-remove"></i>
+            <i class="fa fa-chevron-circle-up panel-toggle"></i>
+        </div>
+        <ul class="list-group list-group-flush"></ul>
+    </div>
+</aside>
+    
+    <!-- 要配置好leancloud才能开启此小工具 -->
+    
+    
+    <aside id="sidebar-recent_posts">
+    <div class="panel panel-gal recent hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <div class="panel-heading">
+            <i class="fa fa-refresh"></i>
+            近期文章
+            <i class="fa fa-times-circle panel-remove"></i>
+            <i class="fa fa-chevron-circle-up panel-toggle"></i>
+        </div>
+        <ul class="list-group list-group-flush">
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/11/21/JSP知识点/">JSP知识点</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/11/18/MySql语句/">MySql语句</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/10/18/java面向对象总结/">java面向对象总结</a>
+                </span>
+            </li>
+            
+        </ul>
+    </div>
+</aside>
+    
+    
+    <aside id="sidebar-rand_posts">
+    <div class="panel panel-gal recent hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+        <div class="panel-heading">
+            <i class="fa fa-refresh"></i>
+            随机文章
+            <i class="fa fa-times-circle panel-remove"></i>
+            <i class="fa fa-chevron-circle-up panel-toggle"></i>
+        </div>
+        <ul class="list-group list-group-flush">
+            
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/11/21/JSP知识点/">JSP知识点</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/11/18/MySql语句/">MySql语句</a>
+                </span>
+            </li>
+            
+            <li class="list-group-item">
+                <span class="post-title">
+                    <a href="/2019/10/18/java面向对象总结/">java面向对象总结</a>
+                </span>
+            </li>
+            
+        </ul>
+    </div>
+</aside>
+    
+    
+    <aside id="gal-sets">
+        <div class="panel panel-gal hidden-xs" data-aos="fade-up" data-aos-duration="2000">
+            <ul class="nav nav-pills pills-gal">
+
+                
+                <li>
+                    <a href="/2019/11/21/JSP知识点/index.html#sidebar-tags" data-toggle="tab" id="tags-tab">热门标签</a>
+                </li>
+                
+                
+                <li>
+                    <a href="/2019/11/21/JSP知识点/index.html#sidebar-friend-links" data-toggle="tab" id="friend-links-tab">友情链接</a>
+                </li>
+                
+                
+                <li>
+                    <a href="/2019/11/21/JSP知识点/index.html#sidebar-links" data-toggle="tab" id="links-tab">个人链接</a>
+                </li>
+                
+            </ul>
+            <div class="tab-content">
+                
+                <div class="cloud-tags tab-pane nav bs-sidenav fade" id="sidebar-tags">
+    
+</div>
+                
+                
+                <div class="friend-links tab-pane nav bs-sidenav fade" id="sidebar-friend-links">
+    
+    <li>
+        <a href="http://kdays.net/days/" target="_blank">KDays Forum</a>
+    </li>
+    
+    <li>
+        <a href="http://www.gal123.com/" target="_blank">绅士导航♂</a>
+    </li>
+    
+    <li>
+        <a href="http://www.moe123.com/" target="_blank">萌导航</a>
+    </li>
+    
+</div>
+                
+                
+                <div class="links tab-pane nav bs-sidenav fade" id="sidebar-links">
+    
+    <li>
+        <a href="https://github.com/ZEROKISEKI/" target="_blank">Github</a>
+    </li>
+    
+    <li>
+        <a href="https://coding.net/u/SORA1" target="_blank">Coding</a>
+    </li>
+    
+    <li>
+        <a href="https://www.zhihu.com/people/aonosora/activities" target="_blank">知乎</a>
+    </li>
+    
+</div>
+                
+            </div>
+        </div>
+    </aside>
+    
+</aside>
+            </div>
+        </div>
+    </div>
+    <footer id="gal-footer">
+    <div class="container">
+        Copyright © 2018 John Doe Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>.&nbsp;Theme by <a href="https://github.com/ZEROKISEKI" target="_blank">AONOSORA</a>
+    </div>
+</footer>
+
+<!-- 回到顶端 -->
+<div id="gal-gotop">
+    <i class="fa fa-angle-up"></i>
+</div>
+</body>
+<script src="/js/activate-power-mode.js"></script>
+<script>
+
+    // 配置highslide
+	hs.graphicsDir = '/js/highslide/graphics/'
+    hs.outlineType = "rounded-white";
+    hs.dimmingOpacity = 0.8;
+    hs.outlineWhileAnimating = true;
+    hs.showCredits = false;
+    hs.captionEval = "this.thumb.alt";
+    hs.numberPosition = "caption";
+    hs.align = "center";
+    hs.transitions = ["expand", "crossfade"];
+    hs.lang.number = '共%2张图, 当前是第%1张';
+    hs.addSlideshow({
+      interval: 5000,
+      repeat: true,
+      useControls: true,
+      fixedControls: "fit",
+      overlayOptions: {
+        opacity: 0.75,
+        position: "bottom center",
+        hideOnMouseOut: true
+      }
+    })
+
+    // 初始化aos
+    AOS.init({
+      duration: 1000,
+      delay: 0,
+      easing: 'ease-out-back'
+    });
+
+</script>
+<script>
+	POWERMODE.colorful = 'true';    // make power mode colorful
+	POWERMODE.shake = 'true';       // turn off shake
+	// TODO 这里根据具体情况修改
+	document.body.addEventListener('input', POWERMODE);
+</script>
+<script>
+    window.slideConfig = {
+      prefix: '/imgs/slide/background',
+      ext: 'jpg',
+      maxCount: '6'
+    }
+</script>
+<script src="/js/hs.js"></script>
+<script src="/js/blog.js"></script>
+
+
+
+</html>
